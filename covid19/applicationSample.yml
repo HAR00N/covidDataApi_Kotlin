@@ -1,0 +1,38 @@
+# Server
+server:
+  address: localhost
+  port: 8080
+
+# mysql
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/{ db name }?useSSL=false&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true
+    username: { username }
+    password: { password }
+  jpa:
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+
+    # jpa hibernate
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        use_sql_comments: true
+
+        # db field name as variable name in class
+        naming.physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+# Log level
+logging:
+  level:
+    org:
+      hibernate: info
+
+# api parsing Setting
+api:
+  covid:
+    url: { url }
+    key: { key }
+
